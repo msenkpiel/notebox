@@ -31,6 +31,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::displayPage');
+$routes->match(['get', 'post'], 'box/create', 'LearnBox::create');
+$routes->get('box/(:segment)', 'LearnBox::view/$1');
+$routes->get('box', 'LearnBox::index');
 $routes->get('(:any)', 'Pages::displayPage/$1');
 
 /**

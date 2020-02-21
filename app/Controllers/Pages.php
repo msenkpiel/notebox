@@ -12,7 +12,7 @@ class Pages extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
 
-        $data['title'] = ucfirst($page); // Capitalize the first letter
+        $data['title'] = ucfirst($page) . ' - ' .getenv('app.title');
 
         echo view('templates/header', $data);
         echo view('pages/' . $page, $data);
