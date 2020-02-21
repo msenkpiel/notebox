@@ -3,16 +3,8 @@
 namespace App\Controllers;
 use CodeIgniter\Controller;
 
-class Pages extends Controller
+class Pages extends BaseController
 {
-
-    /*
-    public function index()
-    {
-        return display()
-    }
-    */
-
     public function displayPage($page = 'home')
     {
         if (!is_file(APPPATH . '/Views/pages/' . $page . '.php')) {
